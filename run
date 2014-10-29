@@ -1,0 +1,23 @@
+#!/bin/bash
+
+[ -z $1 ] && echo "usage: $0 <WEEKDIR>" && exit 1
+
+MAKEFILES=$(find "$1" -mindepth 2 -maxdepth 2 -iname "makefile")
+DIRS=$(for m in $MAKEFILES ; do dirname $m ; done)
+
+# Compile
+for d in $DIRS
+do
+    (cd $d && make)
+done
+
+# Time execution
+TIMES=()
+for d in $DIRS
+do
+    echo $(basename $d):
+    echo ===============
+    (cd $d && time make run)
+    echo
+    echo
+done
