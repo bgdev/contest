@@ -1,5 +1,5 @@
 compile:
-	@echo "Compiling..."
+	gcc -o alien_numbers alien_numbers.c
 
 run:
-	@echo "Running..."
+	./alien_numbers
