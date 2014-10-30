@@ -1,5 +1,5 @@
 compile:
-	@echo "Compiling..."
-
+	javac Translator.java AlienNumbers.java
+    
 run:
-	@echo "Running..."
+	java AlienNumbers
