@@ -32,9 +32,8 @@ waitfor = (condfn, ready, timeout = 3000) ->
   )
 
 
-# Execute callbacb `cb` once fn() returns a different output
+# Execute callback `cb` once fn() returns a different output
 onchange = (fn, cb, interval = 100) ->
-  start = time()
   initial = fn()
   handle = setInterval(
     ->
