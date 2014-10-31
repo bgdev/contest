@@ -59,9 +59,9 @@ is_correct = -> message().indexOf('Correct!') != -1
 page.open URL, (status) ->
   phantom.exit(1) if status != 'success'
 
-  # Wait for the page load up completely (it does so by AJAX).  We try
-  # clicking the Solve button to show up the submit form and, once it's
-  # visible, we proceed
+  # Wait for the page to load up completely (it does so by AJAX).  We
+  # try clicking the Solve button to show up the submit form and, once
+  # it's visible, we proceed
   waitfor(
     ->
       page.evaluate ->
