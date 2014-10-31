@@ -25,21 +25,20 @@ class Conversion(object):
     self.target = target
 
 
-class InputParser(object):
-  def __init__(self, lines):
-    super().__init__()
-    lines = iter(lines)
-    next(lines)
-    self.conversions = [self.parse(line) for line in lines]
+def parse_input(lines):
+  # skip the first line
+  lines = iter(lines)
+  next(lines)
 
-  @staticmethod
-  def parse(line):
+  def parse_line(line):
     tokens = line.split()
     target = AlienLanguage(tokens[2])
     source = AlienLanguage(tokens[1])
     number = AlienNumber(tokens[0], source)
     return Conversion(number, source, target)
 
+  return [parse_line(line) for line in lines]
+
 
 if __name__ == "__main__":
-  reader = InputParser(fileinput.input())
+  conversions = parse_input(fileinput.input())
