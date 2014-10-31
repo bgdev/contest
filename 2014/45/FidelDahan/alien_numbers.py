@@ -14,7 +14,7 @@ class AlienNumber(object):
     self.language = language
 
 
-class Conversion(object):
+class Translation(object):
   def __init__(self,
                number:AlienNumber,
                source:AlienLanguage,
@@ -30,15 +30,19 @@ def parse_input(lines):
   lines = iter(lines)
   next(lines)
 
-  def parse_line(line):
+  def parse_line(line:str):
     tokens = line.split()
     target = AlienLanguage(tokens[2])
     source = AlienLanguage(tokens[1])
     number = AlienNumber(tokens[0], source)
-    return Conversion(number, source, target)
+    return Translation(number, source, target)
 
   return [parse_line(line) for line in lines]
 
 
+def solve_problem():
+  translations = parse_input(fileinput.input())
+
+
 if __name__ == "__main__":
-  conversions = parse_input(fileinput.input())
+  solve_problem()
