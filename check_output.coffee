@@ -60,8 +60,8 @@ page.open URL, (status) ->
   phantom.exit(1) if status != 'success'
 
   # Wait for the page to load up completely (it does so by AJAX).  We
-  # try clicking the Solve button to show up the submit form and, once
-  # it's visible, we proceed
+  # try clicking the Solve button to show up the submit form.  Once the
+  # form is visible, we use it to upload the solution file.
   waitfor(
     ->
       page.evaluate ->
