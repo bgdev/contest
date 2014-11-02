@@ -5,4 +5,4 @@ clean:
 	rm *.class
 
 run:
-	java AlienNumbers < ../A-large-practice.in
+	java AlienNumbers
