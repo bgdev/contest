@@ -7,7 +7,7 @@ Because we all have a lot of free time ;)
 Each solution should provide a Makefile with two targets:
 * compile (that should be the default target): prepares your solution to be run
 * clean: cleans up your directory
-* run: runs your solution against the *LARGE* input file
+* run: runs your solution
 
 Example
 ```makefile
@@ -18,7 +18,7 @@ clean:
         -rm solution
 
 run:
-        ./solution < ../A-large-practice.in
+        ./solution
 
 .PHONY: clean
 .PHONY: run
