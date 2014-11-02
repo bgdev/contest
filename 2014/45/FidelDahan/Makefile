@@ -1,7 +1,12 @@
-compile:
-	@echo "Compiling..."
-	python3.3 alien_numbers_test.py
+clean:
+	@echo "Cleaning..."
+	@rm -f *.pyc
+	@rm -rf __pycache__/
+
+test:
+	@echo "Testing..."
+	@./alien_numbers_test.py
 
 run:
 	@echo "Running..."
-	python3.3 alien_numbers.py ../A-small-practice.in
+	./alien_numbers.py < ../A-large-practice.in
