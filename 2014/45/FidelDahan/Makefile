@@ -1,7 +1,6 @@
 clean:
 	@echo "Cleaning..."
-	@rm -f *.pyc
-	@rm -rf __pycache__/
+	@rm -rf __pycache__/ *.pyc
 
 test:
 	@echo "Testing..."
@@ -9,4 +8,4 @@ test:
 
 run:
 	@echo "Running..."
-	./alien_numbers.py < ../A-large-practice.in
+	./alien_numbers.py
