@@ -15,7 +15,7 @@ compile:
         gcc -o solution solution.c
 
 run:
-        ./solution
+        @./solution
         
 clean:
         -rm solution
