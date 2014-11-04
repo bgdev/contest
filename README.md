@@ -39,5 +39,5 @@ Judged response for input A-small: Correct!
 
 ## Recent ##
 
-w45: 3~9 November 2014: https://code.google.com/codejam/contest/32003/dashboard [A]
+w45: 3~9 November 2014: https://code.google.com/codejam/contest/32003/dashboard [A]  
 w46: 10~16 November 2014: https://code.google.com/codejam/contest/32003/dashboard#s=p1 [B]
