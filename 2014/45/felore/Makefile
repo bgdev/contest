@@ -1,5 +1,11 @@
-compile:
-	@echo "Compiling..."
+build:
 
 run:
-	@echo "Running..."
+	@ruby a.rb
+
+clean:
+
+
+.PHONY: build
+.PHONY: run
+.PHONY: clean
