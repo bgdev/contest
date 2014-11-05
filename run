@@ -17,7 +17,7 @@ for d in $DIRS
 do
     echo $(basename $d):
     echo ===============
-    (cd $d && time make run)
+    (cd $d && time make run < ../A-large-practice.in)
     echo
     echo
 done
