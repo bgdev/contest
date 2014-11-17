@@ -1,5 +1,6 @@
 compile:
-	@echo "Compiling..."
-
+	go build 45.go
 run:
-	@echo "Running..."
+	./45 ../A-large-practice.in
+clean:
+	-rm 45
