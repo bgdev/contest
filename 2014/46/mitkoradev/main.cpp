@@ -4,7 +4,6 @@
 
 
 char path[2][16000];
-//WW WW
 
 std::map< std::pair<int,int> ,char > maze;
 
@@ -22,7 +21,7 @@ int DirToMask(POINT dir)
 
 void Walk(const char*  path,POINT &pos,POINT &dir, POINT &minpt,POINT &maxpt)
 {
-    POINT indir=dir;
+    POINT enter_dir=dir;///enter direction for cell
 
     path++;
     pos+=dir;
@@ -42,13 +41,13 @@ void Walk(const char*  path,POINT &pos,POINT &dir, POINT &minpt,POINT &maxpt)
                 if(maxpt.real()<pos.real())maxpt.real()=pos.real();
                 if(maxpt.imag()<pos.imag())maxpt.imag()=pos.imag();
 
-                ///break walls in input output directiond
-                maze[std::make_pair(pos.real(),pos.imag())]|=DirToMask(-indir);
+                ///break walls in enter and exit directions
+                maze[std::make_pair(pos.real(),pos.imag())]|=DirToMask(-enter_dir);
                 maze[std::make_pair(pos.real(),pos.imag())]|=DirToMask(+dir);
 
                 pos+=dir;
 
-                indir=dir;
+                enter_dir=dir;
 
                 break;
 
@@ -66,6 +65,10 @@ void Walk(const char*  path,POINT &pos,POINT &dir, POINT &minpt,POINT &maxpt)
 
 int main()
 {
+    /**
+    Initally there are walls everywhere,
+    each move breaks walls
+    */
     int N=0;
     scanf("%d",&N);
     for(int k=1;k<=N;k++)
@@ -79,12 +82,8 @@ int main()
 
         Walk(path[0],pos,dir, minpt,maxpt);
 
-        POINT enddir=dir;
-
         dir=-dir;
         Walk(path[1],pos,dir, minpt,maxpt);
-
-        POINT startdir=dir;
 
         printf("Case #%d:\n",k);
         for(int y=maxpt.imag();y>=minpt.imag();y--)
