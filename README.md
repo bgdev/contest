@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/bgdev/contest.png?label=ready&title=Ready)](https://waffle.io/bgdev/contest)
 # Задачки #
 
 Всяка седмица пускаме нова задача, желаещите (и можещите) я решават.
